@@ -1,6 +1,7 @@
 // promo
 const PROMO_CODE = 'stevekaku';
 const promoCodeDiscountInPercent = 20;
+let isPromoCodeApplied = false;
 
 // base prices
 let basePrice = 1299;
@@ -8,10 +9,10 @@ let memoryCost = 0;
 let storageCost = 0;
 let deliveryCharge = 0;
 let total = 1299;
-let discount = 0;
 
 // update price
 function updatePrice() {
+  // calculate total
   total = basePrice + memoryCost + storageCost + deliveryCharge;
 
   // get elements
@@ -29,32 +30,40 @@ function updatePrice() {
   totalPriceElement.innerText = total;
 
   // update grand total when update prices
-  updateGrandTotal(total, 0);
+  let discount = 0;
+  if (isPromoCodeApplied) {
+    discount = getDiscount(total);
+  }
+  updateGrandTotal(total, discount);
 }
 
 // update grand total
 function updateGrandTotal(total, discount) {
+  // calculate grand total
   const grandTotal = total - discount;
 
+  // update inner html
   const grandTotalElement = document.getElementById('grand-total');
   grandTotalElement.innerText = grandTotal;
 }
 
-// apply promo code
+// check apply promo code applied
 function applyPromoCode(typedInput) {
+  // if promo code matched
   if (typedInput == PROMO_CODE) {
-    return true;
+    const discount = getDiscount(total);
+    updateGrandTotal(total, discount);
+    isPromoCodeApplied = true;
+    return;
   }
+  // if promo code doesn't matched
   alert('Wrong Promo Code');
-  return false;
 }
 
 // get discount
-function getDiscount(isPromoCodeApplied) {
-  let discount = 0;
-  if (isPromoCodeApplied) {
-    discount = (total / 100) * promoCodeDiscountInPercent;
-  }
+function getDiscount(total) {
+  // calculate and return discount price
+  const discount = (total / 100) * promoCodeDiscountInPercent;
   return discount;
 }
 
@@ -93,17 +102,19 @@ document.getElementById('fast-delivery').addEventListener('click', function () {
 document
   .getElementById('apply-promo-btn')
   .addEventListener('click', function () {
+    // get users typed text
     const promoCodeInput = document.getElementById('promo-code-input');
     const typedInput = promoCodeInput.value;
 
+    // promo code input can't be blank
     if (typedInput == '') {
       alert('Input is empty!!');
       return;
     }
 
-    const isPromoCodeApplied = applyPromoCode(typedInput);
-    discount = getDiscount(isPromoCodeApplied);
-    updateGrandTotal(total, discount);
+    // apply promo code
+    applyPromoCode(typedInput);
 
+    // clear input
     promoCodeInput.value = '';
   });
