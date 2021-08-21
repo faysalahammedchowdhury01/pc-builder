@@ -47,7 +47,7 @@ function updateGrandTotal(total, discount) {
   grandTotalElement.innerText = grandTotal;
 }
 
-// check apply promo code applied
+// apply promo code
 function applyPromoCode(typedInput) {
   // if promo code matched
   if (typedInput == PROMO_CODE) {
