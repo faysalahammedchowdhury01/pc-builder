@@ -55,7 +55,7 @@ function applyPromoCode(typedInput) {
     return;
   }
   // if promo code doesn't match
-  alert('Wrong Promo Code');
+  alert('Invalid promo code');
 }
 
 // calculate and return discount price
@@ -105,7 +105,7 @@ document
   .addEventListener('click', function () {
     // get users typed text
     const promoCodeInput = document.getElementById('promo-code-input');
-    const typedInput = promoCodeInput.value;
+    const typedInput = promoCodeInput.value.trim();
 
     // promo code input can't be blank
     if (typedInput == '') {
