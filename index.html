@@ -42,10 +42,10 @@
               <div class="memory mt-5">
                 <h5 class="h5 fw-bold">Memory</h5>
                 <div class="memory-buttons mt-1">
-                  <button class="btn btn-outline-dark">
+                  <button id="8gb-memory" class="btn btn-outline-dark">
                     8GB unified memory
                   </button>
-                  <button class="btn btn-outline-dark">
+                  <button id="16gb-memory" class="btn btn-outline-dark">
                     16GB unified memory
                   </button>
                 </div>
@@ -54,23 +54,25 @@
               <div class="storage mt-5">
                 <h5 class="h5 fw-bold">Storage</h5>
                 <div class="storage-buttons mt-1">
-                  <button class="btn btn-outline-dark">
+                  <button id="256gb-storage" class="btn btn-outline-dark">
                     256GB SSD storage
                   </button>
-                  <button class="btn btn-outline-dark">
-                    256GB SSD storage
+                  <button id="512gb-storage" class="btn btn-outline-dark">
+                    512GB SSD storage
                   </button>
-                  <button class="btn btn-outline-dark">1TB SSD storage</button>
+                  <button id="1tb-storage" class="btn btn-outline-dark">
+                    1TB SSD storage
+                  </button>
                 </div>
               </div>
               <!-- shipping -->
               <div class="shipping mt-5">
                 <h5 class="h5 fw-bold">Choose your delivery option</h5>
                 <div class="shipping-buttons mt-1">
-                  <button class="btn btn-outline-dark">
+                  <button id="free-delivery" class="btn btn-outline-dark">
                     Friday, Aug 25 FREE Prime Delivery
                   </button>
-                  <button class="btn btn-outline-dark">
+                  <button id="fast-delivery" class="btn btn-outline-dark">
                     Friday, Aug 21 Delivery charge $20
                   </button>
                 </div>
@@ -80,24 +82,24 @@
                 <table class="table w-50">
                   <tbody>
                     <tr>
-                      <th scope="row">Best Price</th>
-                      <th>$<span>1299</span></th>
+                      <th scope="row">Base Price</th>
+                      <th>$<span id="base-price">1299</span></th>
                     </tr>
                     <tr>
                       <th scope="row">Extra Memory Cost</th>
-                      <th>$<span>0</span></th>
+                      <th>$<span id="extra-memory-cost">0</span></th>
                     </tr>
                     <tr>
                       <th scope="row">Extra Storage Cost</th>
-                      <th>$<span>0</span></th>
+                      <th>$<span id="extra-storage-cost">0</span></th>
                     </tr>
                     <tr class="border-dark">
                       <th scope="row">Delivery Charge</th>
-                      <th>$<span>0</span></th>
+                      <th>$<span id="delivery-charge">0</span></th>
                     </tr>
                     <tr>
                       <th scope="row">Total</th>
-                      <th>$<span>1299</span></th>
+                      <th>$<span id="total">1299</span></th>
                     </tr>
                   </tbody>
                 </table>
@@ -113,11 +115,11 @@
                     type="text"
                     class="form-control"
                     aria-label="Username"
-                    aria-describedby="basic-addon1"
+                    aria-describedby="apply-promo-btn"
                   />
                   <button
                     class="input-group-text btn btn-danger"
-                    id="basic-addon1"
+                    id="apply-promo-btn"
                   >
                     Apply
                   </button>
@@ -127,7 +129,9 @@
             <!-- grand total -->
             <div class="col-12 border-top">
               <div class="grand-total pt-4">
-                <h2 class="fw-bold text-center">Total: $<span>1299</span></h2>
+                <h2 class="fw-bold text-center">
+                  Total: $<span id="grand-total">1299</span>
+                </h2>
               </div>
             </div>
           </div>
