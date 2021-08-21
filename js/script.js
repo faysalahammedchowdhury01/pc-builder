@@ -68,24 +68,24 @@ function getDiscount(total) {
 }
 
 // event listeners
-document.getElementById('8gb-memory').addEventListener('click', function () {
+document.getElementById('memory-8gb').addEventListener('click', function () {
   memoryCost = 0;
   updatePrice();
 });
-document.getElementById('16gb-memory').addEventListener('click', function () {
+document.getElementById('memory-16gb').addEventListener('click', function () {
   memoryCost = 180;
   updatePrice();
 });
 
-document.getElementById('256gb-storage').addEventListener('click', function () {
+document.getElementById('storage-256gb').addEventListener('click', function () {
   storageCost = 0;
   updatePrice();
 });
-document.getElementById('512gb-storage').addEventListener('click', function () {
+document.getElementById('storage-512gb').addEventListener('click', function () {
   storageCost = 100;
   updatePrice();
 });
-document.getElementById('1tb-storage').addEventListener('click', function () {
+document.getElementById('storage-1tb').addEventListener('click', function () {
   storageCost = 180;
   updatePrice();
 });
