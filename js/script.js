@@ -10,9 +10,8 @@ let storageCost = 0;
 let deliveryCharge = 0;
 let total = 1299;
 
-// update price
+// calculate and update total price
 function updatePrice() {
-  // calculate total
   total = basePrice + memoryCost + storageCost + deliveryCharge;
 
   // get elements
@@ -37,9 +36,8 @@ function updatePrice() {
   updateGrandTotal(total, discount);
 }
 
-// update grand total
+// calculate and update grand total
 function updateGrandTotal(total, discount) {
-  // calculate grand total
   const grandTotal = total - discount;
 
   // update inner html
