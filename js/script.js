@@ -1,9 +1,9 @@
-// promo
+// promo info
 const PROMO_CODE = 'stevekaku';
 const promoCodeDiscountInPercent = 20;
 let isPromoCodeApplied = false;
 
-// base prices
+// base prices (update when customize configuration)
 let basePrice = 1299;
 let memoryCost = 0;
 let storageCost = 0;
